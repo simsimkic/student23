@@ -1,0 +1,143 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.BlogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica_Lekar.DoctorContentPages"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+    <Page.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="2,2,0,0" Margin="2,0">
+                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="GhostWhite"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#bbbbbb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TabControl Width="Auto" DockPanel.Dock="Bottom" Margin="10">
+            <TabItem Header="Blog" FontSize="15">
+                <ListBox ScrollViewer.CanContentScroll="False" Name="ArticlesList" PreviewKeyDown="ArticlesList_PreviewKeyDown">
+                    <ListBoxItem Margin="20,10,20,0" x:Name="FirstItemInBlogTab">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/bookmark.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Prevencija" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Margin="20,10,20,0">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/bookmark.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Neurologija" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Margin="20,10,20,0">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="../images/bookmark.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Psihijatrija" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </TabItem>
+
+            <TabItem Header="Novi članak" FontSize="15">
+                <StackPanel Orientation="Vertical" Margin="40,30">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="8*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Naslov članka:" FontSize="15" FontWeight="Bold"/>
+                        <TextBox x:Name="ArticleTitleTextBox" Grid.Row="0" Grid.Column="1" FontSize="15" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Tekst članka:" FontSize="15" FontWeight="Bold" Margin="0,30,0,0"/>
+                        <TextBox x:Name="ArticleContentTextBox" Grid.Row="1" Grid.Column="1" FontSize="15" Height="220" Margin="0,30,0,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Odabir kategorije:" FontSize="15" FontWeight="Bold" Margin="0,30,0,0"/>
+                        <DataGrid x:Name="DataGridCategoryType" Grid.Row="2" Grid.Column="1" Height="110" ItemsSource="{Binding Path=., Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" Margin="0,30,0,0" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" PreviewKeyDown="DataGridCategoryType_PreviewKeyDown">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding CategoryTypeId}" Header="ID" Width="1*" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding CategoryTypeName}" Header="Ime kategorije" Width="3*" IsReadOnly="True"/>
+                                <DataGridTemplateColumn Width="1*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <RadioButton GroupName="CategoryTypeClass" IsChecked="{Binding CategoryTypeChosen, UpdateSourceTrigger=PropertyChanged}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <Button x:Name="PostArticleButton" Background="White" Content="Postavi" Margin="0,15,0,0" Height="33" FontSize="20" Click="PostArticleButton_Click"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

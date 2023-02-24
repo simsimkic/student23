@@ -1,0 +1,261 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.DoctorSchedulePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:c1="clr-namespace:C1.WPF.Localization;assembly=C1.WPF.Schedule.4.5.2"
+      xmlns:sw="clr-namespace:ScheduleWidget.ScheduledEvents;assembly=ScheduleWidget"
+      xmlns:local="clr-namespace:Bolnica_Lekar"
+      xmlns:c11="http://schemas.componentone.com/winfx/2006/xaml"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+
+    <Page.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="2,2,0,0" Margin="2,0">
+                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="GhostWhite"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#bbbbbb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ListBoxItemStyle1"
+       TargetType="{x:Type ListBoxItem}">
+            <Setter Property="SnapsToDevicePixels"
+          Value="True" />
+            <Setter Property="Padding"
+          Value="4,1" />
+            <Setter Property="HorizontalContentAlignment"
+          Value="{Binding HorizontalContentAlignment,
+                          RelativeSource={RelativeSource FindAncestor,
+                                                         AncestorLevel=1,
+                                                         AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="VerticalContentAlignment"
+          Value="{Binding VerticalContentAlignment,
+                          RelativeSource={RelativeSource FindAncestor,
+                                                         AncestorLevel=1,
+                                                         AncestorType={x:Type ItemsControl}}}" />
+            <Setter Property="Background"
+          Value="Transparent" />
+            <Setter Property="BorderBrush"
+          Value="Transparent" />
+            <Setter Property="BorderThickness"
+          Value="1" />
+            <Setter Property="FocusVisualStyle">
+                <Setter.Value>
+                    <Style>
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Rectangle Margin="2"
+                         SnapsToDevicePixels="True"
+                         Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                         StrokeDashArray="1 2"
+                         StrokeThickness="1" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Padding="{TemplateBinding Padding}"
+                SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver"
+                         Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Bd"
+                    Property="Background"
+                    Value="#1F1ABC9C" />
+                                <Setter TargetName="Bd"
+                    Property="BorderBrush"
+                    Value="#A81ABC9C" />
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive"
+                         Value="False" />
+                                    <Condition Property="IsSelected"
+                         Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Bd"
+                    Property="Background"
+                    Value="#3DDADADA" />
+                                <Setter TargetName="Bd"
+                    Property="BorderBrush"
+                    Value="#FFDADADA" />
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Selector.IsSelectionActive"
+                         Value="True" />
+                                    <Condition Property="IsSelected"
+                         Value="True" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Bd"
+                    Property="Background"
+                    Value="#3D1ABC9C" />
+                                <Setter TargetName="Bd"
+                    Property="BorderBrush"
+                    Value="#FF1ABC9C" />
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled"
+                   Value="False">
+                                <Setter TargetName="Bd"
+                    Property="TextElement.Foreground"
+                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <DockPanel>
+        <TabControl Width="Auto" Margin="10" DockPanel.Dock="Bottom">
+            <TabItem Header="Danas" FontSize="15">
+                <Grid Background="#FFFFFF">
+                    <ListBox ScrollViewer.CanContentScroll="False" Name="ListBoxObject" PreviewKeyDown="ListBoxObject_PreviewKeyDown">
+                        <ListBoxItem Margin="20,10,20,0" x:Name="FirstItemInTab">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Marko Markic" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                        <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/medical-kit.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Opsti pregled" Margin="1"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="20,10,20,0">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Marko Markic" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                        <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/medical-kit.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Opsti pregled" Margin="1"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="20,10,20,0">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Marko Markic" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                        <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/medical-kit.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Opsti pregled" Margin="1"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="20,10,20,0">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Marko Markic" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                        <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/medical-kit.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Opsti pregled" Margin="1"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="20,10,20,0">
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/patient.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Marko Markic" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                                        <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="../images/medical-kit.png" Width="25" Margin="5"></Image>
+                                        <Label Content="Opsti pregled" Margin="1"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DockPanel>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Radni kalendar" FontSize="15">
+                <Grid Background="#FFFFFF">
+                    <c11:C1Scheduler x:Name="scheduler1" Theme="{DynamicResource
+{ComponentResourceKey ResourceId=Office2007.Silver,
+TypeInTargetAssembly={x:Type c11:C1Scheduler}}}"/>
+                    
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+    
+</Page>

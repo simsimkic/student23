@@ -1,0 +1,45 @@
+/***********************************************************************
+ * Module:  UnautheticatedUserController.cs
+ * Purpose: Definition of the Class Controller.UnautheticatedUserController
+ ***********************************************************************/
+
+using System;
+
+namespace Controller.UserControllers
+{
+   public class UnautheticatedUserController
+   {
+      public UserInfoDTO GetUserInfoByEmail(String userEmail)
+      {
+         // TODO: implement
+         return null;
+      }
+      
+      public UserDTO Login(String email, String password)
+      {
+         // TODO: implement
+         return null;
+      }
+      
+      public UserDTO Registration(UserDTO newUser)
+      {
+         // TODO: implement
+         return null;
+      }
+      
+      public ChangeEmailDTO ChangeEmail(ChangeEmailDTO changeEmailDTO)
+      {
+         // TODO: implement
+         return null;
+      }
+      
+      public ChangePasswordDTO ChangeForgottenPassword(ChangePasswordDTO changePasswordDTO)
+      {
+         // TODO: implement
+         return null;
+      }
+   
+      public Service.UserServices.UnauthenticatedUserService unauthenticatedUserService;
+   
+   }
+}

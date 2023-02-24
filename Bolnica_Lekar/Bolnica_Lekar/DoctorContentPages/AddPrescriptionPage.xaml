@@ -1,0 +1,42 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.AddPrescriptionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:local="clr-namespace:Bolnica_Lekar.DoctorContentPages"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+
+    <Grid Margin="10, 20">
+        <Border BorderThickness="1" CornerRadius="10" BorderBrush="#444444" Background="White" Margin="0">
+            <StackPanel Orientation="Vertical" Margin="70,30">
+                <TextBlock Text="Dodavanje lekarskog recepta" FontSize="25" Margin="0,0,0,30" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                <TextBlock Text="Registar lekova" FontSize="19" Margin="0,0,0,10"/>
+                <DataGrid x:Name="DataGridDrugsRegistry" Grid.Row="0" Grid.Column="1" Height="110" ItemsSource="{Binding Path=., Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" Margin="0,0,0,15" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" PreviewKeyDown="DataGridDrugsRegistry_PreviewKeyDown" CanUserAddRows="false" IsSynchronizedWithCurrentItem="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding DrugId}" Header="ID" Width="1*" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding DrugName}" Header="Ime leka" Width="3*" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                
+                <TextBlock Text="Stavke recepta" FontSize="19" Margin="0,0,0,5"/>
+                <DataGrid x:Name="DataGridChosenDrugs" Grid.Row="0" Grid.Column="1" Height="110" ItemsSource="{Binding Path=., Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" Margin="0,0,0,15" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" PreviewKeyDown="DataGridChosenDrugs_PreviewKeyDown" CanUserAddRows="false" IsSynchronizedWithCurrentItem="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding DrugId}" Header="ID" Width="1*" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding DrugName}" Header="Ime leka" Width="3*" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding DrugQuantity}" Width="1*" Header="Količina" IsReadOnly="False"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="ConfirmPrescriptionButton" Background="White" Content="Izdaj recept" Margin="0,0,0,5" Height="33" FontSize="20" Click="ConfirmPrescriptionButton_Click"/>
+                <Button x:Name="CancelPrescriptiontButton" Background="White" Content="Poništi recept" Margin="0,0,0,5" Height="33" FontSize="20" Click="CancelPrescriptiontButton_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

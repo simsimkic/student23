@@ -1,0 +1,28 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.ListOfDrugsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica_Lekar.DoctorContentPages"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+
+    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Center" Text="Lista neodobrenih lekova" FontSize="25" Margin="50" Foreground="White"/>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Vertical">
+            <Grid Grid.Row="1" Margin="30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" x:Name="IDSearchBox" Height="25" Text="{Binding FilterID, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Column="1" Height="25" Text="{Binding FilterName, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <DataGrid Margin="30,0,30,40" ItemsSource="{Binding DataGridCollection}" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" PreviewKeyDown="DataGrid_OnPreviewKeyDown" IsReadOnly="True"></DataGrid>
+        </StackPanel>
+    </DockPanel>
+</Page>

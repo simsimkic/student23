@@ -1,0 +1,50 @@
+﻿<Window x:Class="Bolnica_Lekar.AppointmentReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica_Lekar"
+        mc:Ignorable="d"
+        Title="Izveštaj pregleda" Height="650" Width="650"
+        MinHeight="380" MinWidth="730"
+        Background="#1abc9c"
+        Icon="images/MedicalClinicLogo.png"
+        Loaded="Window_Loaded"
+        >
+    <Grid Margin="10, 20">
+        <Border BorderThickness="1" CornerRadius="10" BorderBrush="#444444" Background="White" Margin="0">
+            <StackPanel Orientation="Vertical" Margin="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="images/doctor.png" Width="25" Margin="5"></Image>
+                    <TextBlock x:Name="DoctorNameTextBlock"  Grid.Column="1" Text="Marija Marijić" VerticalAlignment="Center" FontSize="19"/>
+                    <Image Grid.Column="2" Source="images/calendar.png" Width="25" Margin="5"></Image>
+                    <TextBlock x:Name="DateTextBlock" Grid.Column="3" Text="15.04.2020." VerticalAlignment="Center" FontSize="19"/>
+                    <Image Grid.Column="4" Source="images/medical-kit.png" Width="25" Margin="5"></Image>
+                    <TextBlock x:Name="AppointmentTypeBlock" Grid.Column="5" Text="Opšti pregled" VerticalAlignment="Center" FontSize="19"/>
+                </Grid>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,10"/>
+                <TextBlock Text="Opis problema" FontSize="19" Margin="0,0,0,5"/>
+                <TextBox x:Name="ProblemDescriptionTextBox" Margin="0,0,0,15" Grid.Row="0" Grid.Column="1" FontSize="15" Height="90" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Text="Nije mu dobro bilo."/>
+                <TextBlock Text="Opis pregleda" FontSize="19" Margin="0,0,0,5"/>
+                <TextBox x:Name="AppointmentDescriptionTextBox" Margin="0,0,0,15" Grid.Row="0" Grid.Column="1" FontSize="15" Height="90" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Text="Super je bilo. Sledeći put još bolje."/>
+                <TextBlock Text="Dijagnoze" FontSize="19" Margin="0,0,0,5"/>
+                <DataGrid x:Name="DataGridDiagnosis" Height="100" ItemsSource="{Binding Path=., Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" Margin="0,0,0,15" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding DiagnosisId}" Header="ID" Width="1*" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding DiagnosisName}" Header="Dijagnoze" Width="3*" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button x:Name="BackToPastMedicalServicesWindow" Background="White" Content="Nazad" Margin="0,0,0,5" Height="33" FontSize="20" Click="BackToPastMedicalServicesWindow_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+
+</Window>

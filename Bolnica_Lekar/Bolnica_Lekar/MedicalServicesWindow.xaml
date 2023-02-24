@@ -1,0 +1,193 @@
+﻿<Window x:Class="Bolnica_Lekar.MedicalServicesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bolnica_Lekar"
+        mc:Ignorable="d"
+        Title="Prethodne medicinske usluge" Height="650" Width="650"
+        MinHeight="380" MinWidth="730"
+        Background="#1abc9c"
+        Icon="images/MedicalClinicLogo.png"
+        Loaded="Window_Loaded"
+        >
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="2,2,0,0" Margin="2,0">
+                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="GhostWhite"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#bbbbbb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TabControl Width="Auto" DockPanel.Dock="Bottom">
+            <TabItem Header="Pregledi" FontSize="15">
+                <ListBox ScrollViewer.CanContentScroll="False" Name="AppointmentsList" PreviewKeyDown="AppointmentsList_PreviewKeyDown">
+                    <ListBoxItem Margin="20,10,20,0" x:Name="FirstItemInAppointmentTab">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/medical-kit.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Opsti pregled" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Margin="20,10,20,0">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/medical-kit.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Opsti pregled" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Margin="20,10,20,0">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/medical-kit.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Opsti pregled" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </TabItem>
+
+            <TabItem Header="Operacije" FontSize="15">
+                <ListBox ScrollViewer.CanContentScroll="False" Name="OperationList">
+                    <ListBoxItem Margin="20,10,20,0" x:Name="FirstItemInOperationTab">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/medical-kit.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Tip operacije 1" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Margin="20,10,20,0">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/patient.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Marko Markic" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020. 17.30h" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/medical-kit.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Tip operacije 2" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    
+                </ListBox>
+            </TabItem>
+
+            <TabItem Header="Hospitalizacije" FontSize="15">
+                <ListBox ScrollViewer.CanContentScroll="False" Name="HospitalizationList">
+                    <ListBoxItem Margin="20,10,20,0" x:Name="FirstItemInHospitalizationTab">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="10.05.2020." Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="14.05.2020." Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/bed.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Soba 1" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Margin="20,10,20,0">
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <StackPanel DockPanel.Dock="Left"  Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="23.03.2020" Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/calendar.png" Width="25" Margin="5"></Image>
+                                    <Label Content="25.03.2020." Margin="1"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="images/bed.png" Width="25" Margin="5"></Image>
+                                    <Label Content="Soba 3" Margin="1"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </ListBoxItem>
+
+                </ListBox>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,162 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.PatientMedicalRecordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica_Lekar.DoctorContentPages"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+    <Page.Resources>
+        <Style TargetType="TabItem">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabItem">
+                            <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="2,2,0,0" Margin="2,0">
+                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="GhostWhite"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter TargetName="Border" Property="Background" Value="#bbbbbb" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Page.Resources>
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Column="0" Source="../images/patient.png" Width="100" Margin="5,20"></Image>
+            <Grid Grid.Column="1" Grid.Row="0" Margin="5,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Ime i prezime:" Grid.Column="0" Grid.Row="0" FontSize="17" Foreground="White"/>
+                <TextBlock Text="Marko Markić" FontWeight="Bold"  Grid.Column="1" Grid.Row="0" FontSize="17" Foreground="White"/>
+                <TextBlock Text="Datum rođenja:" Grid.Column="0" Grid.Row="1" FontSize="17" Foreground="White"/>
+                <TextBlock Text="22. 07. 1961." FontWeight="Bold"  Grid.Column="1" Grid.Row="1" FontSize="17" Foreground="White"/>
+                <TextBlock Text="Pol:" Grid.Column="0" Grid.Row="2" FontSize="17" Foreground="White"/>
+                <TextBlock Text="muški" FontWeight="Bold"  Grid.Column="1" Grid.Row="2" FontSize="17" Foreground="White"/>
+            </Grid>
+            
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <TabControl Width="Auto" DockPanel.Dock="Bottom">
+                <TabItem Header="Zdravstveni karton" FontSize="15">
+                    <StackPanel Orientation="Vertical" Margin="40,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Težina:" Grid.Column="0" Grid.Row="0" FontSize="15"/>
+                                <TextBlock Text="75kg" FontWeight="Bold"  Grid.Column="1" Grid.Row="0" FontSize="15"/>
+                                <TextBlock Text="Visina:" Grid.Column="0" Grid.Row="1" FontSize="15"/>
+                                <TextBlock Text="180cm" FontWeight="Bold"  Grid.Column="1" Grid.Row="1" FontSize="15"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Dioptrija:" Grid.Column="0" Grid.Row="0" FontSize="15"/>
+                                <TextBlock Text="-1" FontWeight="Bold"  Grid.Column="1" Grid.Row="0" FontSize="15"/>
+                                <TextBlock Text="Krvna grupa:" Grid.Column="0" Grid.Row="1" FontSize="15"/>
+                                <TextBlock Text="AB+" FontWeight="Bold"  Grid.Column="1" Grid.Row="1" FontSize="15"/>
+                            </Grid>
+                        </Grid>
+
+                        <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,15"/>
+                        <TextBlock Text="Alergije" FontSize="15" FontWeight="Bold" Margin="0,0,0,15"/>
+                        <DataGrid x:Name="DataGridAllergy" ItemsSource="{Binding Path=., Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" Height="120" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding AllergyId}" Header="ID" Width="1*" IsReadOnly="True"/>
+                                <DataGridTextColumn Binding="{Binding AllergyName}" Header="Alergije" Width="3*" IsReadOnly="True"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <Button x:Name="ShowPastPrescriptionsButton" Background="White" Content="Pretraži lekarske recepte" Margin="0,15,0,0" Height="33" FontSize="20" Click="ShowPastPrescriptionsButton_Click"/>
+                        <Button x:Name="ShowPastMedicalServicesButton" Background="White" Content="Prethodne medicinske usluge" Margin="0,15,0,0" Height="33" FontSize="20" Click="ShowPastMedicalServicesButton_Click"/>
+                        <Button x:Name="LastButton" Background="White" Content="{Binding Path=LastButtonContent}" Margin="0,15,0,0" Height="33" FontSize="20" Click="LastButton_Click"/>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Pregled" FontSize="15" Visibility="{Binding Path=IsAppointment, Converter={StaticResource BoolToVisConverter} }">
+                    <StackPanel Orientation="Vertical" Margin="40,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="8*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Opis problema:" FontSize="15" FontWeight="Bold"/>
+                            <TextBox x:Name="ProblemDescriptionTextBox" Grid.Row="0" Grid.Column="1" FontSize="15" Height="90" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Opis pregleda:" FontSize="15" FontWeight="Bold" Margin="0,15,0,0"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" FontSize="15" Height="90" Margin="0,15,0,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Dijagnoze:" FontSize="15" FontWeight="Bold" Margin="0,15,0,0"/>
+                            <DataGrid x:Name="DataGridDiagnosis" Grid.Row="2" Grid.Column="1" Height="110" ItemsSource="{Binding Path=., Mode=TwoWay, NotifyOnSourceUpdated=True, UpdateSourceTrigger=PropertyChanged}" ColumnWidth="*" RowHeight="25" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF444444" VerticalGridLinesBrush="#FF444444" AlternatingRowBackground="LightGray" Margin="0,15,0,0" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" PreviewKeyDown="DataGridDiagnosis_PreviewKeyDown">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding DiagnosisId}" Header="ID" Width="1*" IsReadOnly="True"/>
+                                    <DataGridTextColumn Binding="{Binding DiagnosisName}" Header="Dijagnoze" Width="3*" IsReadOnly="True"/>
+                                    <DataGridCheckBoxColumn Binding="{Binding DiagnosisIsChecked}" Width="1*" IsReadOnly="False"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button Name="FinishAppointmentButton" Background="White" Content="Nastavi" Margin="0,15,0,0" Height="33" FontSize="20" Click="FinishAppointmentButton_Click"/>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Page>

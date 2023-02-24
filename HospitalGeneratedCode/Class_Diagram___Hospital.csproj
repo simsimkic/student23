@@ -1,0 +1,746 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{364CA291-5399-4C38-A4A8-873F15EA5B4B}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Class_Diagram___Hospital"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                RootNamespace = "Class_Diagram___Hospital"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.XML.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "%windowsDirectory%\\Microsoft.NET\\Framework\\v1.0.3705\\System.Web.Services.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\User.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\Patient.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\Manager.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\Secretary.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\Doctor.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\Country.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\City.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\User\Sex.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Model\Patient\MedicalRecord.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Patient\Allergy.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Patient\BloodType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Model\MedicalService\MedicalService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\Appointment.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\Operation.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\Report.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\Diagnosis.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\OperationType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\Hospitalization.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\MedicalService\Priority.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Model\Doctor\Specialty.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\SpecialistDoctor.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\DurationPeriod.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\Shift.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\Article.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\Category.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\Vacation.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\InstructionAndPrescription\Prescription.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\InstructionAndPrescription\LaboratoryInstruction.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\InstructionAndPrescription\Drug.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\InstructionAndPrescription\Ingredient.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\InstructionAndPrescription\PrescriptionItem.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\Doctor\InstructionAndPrescription\AnalysisType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Model\EquipmentAndRooms\ServiceRoom.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\Equipment.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\EquipmentInRoom.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\OtherEquipment.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\MedicalEquipment.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\Room.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\HospitalizationRoom.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\ServiceType.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\MeasureUnit.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Model\EquipmentAndRooms\EquipmentReservationTime.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Model\Rating\Rating.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\MedicalServices\AppointmentService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\MedicalServices\OperationService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\MedicalServices\HospitalizationService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\UserServices\UnauthenticatedUserService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\UserServices\UserProfileService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\BlogServices\BlogService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\MedicalInfoServices\MedicalRecordService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\MedicalInfoServices\PrescriptionInfoService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\MedicalInfoServices\ReportService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\MedicalInfoServices\DiagnosisService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\MedicalInfoServices\AllergyService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\DoctorServices\DrugService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\AddPrescriptionService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\OperationTypeService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\DoctorsService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\SpecialityService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\AnalysisTypeService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\LaboratoryInstructionService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\VacationService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\DurationPeriodService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\DoctorServices\ShiftService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\EquipmentAndRoomsServices\ServiceRoomService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\EquipmentAndRoomsServices\HospitalizationRoomService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\EquipmentAndRoomsServices\MedicalEquipmentService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Service\EquipmentAndRoomsServices\ServiceTypeService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Service\PatientService\PatientService.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\MedicalServiceControllers\AppointmentController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalServiceControllers\OperationController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalServiceControllers\HospitalizationController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalServiceControllers\ServiceTemplate.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\UserControllers\UnautheticatedUserController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\UserControllers\UserProfileController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\BlogControllers\BlogController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\MedicalInfoControllers\MedicalRecordController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalInfoControllers\PrescriptionInfoController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalInfoControllers\ReportController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalInfoControllers\DiagnosisController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\MedicalInfoControllers\AllergyController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\DoctorControllers\SpecialityController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\DoctorControllers\DoctorsController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\DoctorControllers\OperationTypeController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\DoctorControllers\AddPrescriptionController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\DoctorControllers\DrugController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\DoctorControllers\VacationController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\DoctorControllers\DurationPeriodController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\EquipmentAndRoomsController\ServiceRoomController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\EquipmentAndRoomsController\HospitalizationRoomController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\EquipmentAndRoomsController\MedicalEquipmentController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controller\EquipmentAndRoomsController\ServiceTypeController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Controller\PatientControllers\PatientController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Repository\UserRepositories\UserRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Repository\BlogRepositories\ArticleRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\BlogRepositories\CategoryRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Repository\MedicalServicesRepositories\AppointmentRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalServicesRepositories\OperationRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalServicesRepositories\HospitalizationRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalServicesRepositories\OperationTypeRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Repository\MedicalInfoRepositories\MedicalRecordRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalInfoRepositories\PrescriptionRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalInfoRepositories\ReportRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalInfoRepositories\DiagnosisRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\MedicalInfoRepositories\AllergyRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Repository\DoctorServicesRepositories\DrugRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\LaboratoryInstructionRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\AnalysisTypeRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\DoctorRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\SpecialityRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\VacationRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\DurationPeriodRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\IngredientRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\RatingRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\DoctorServicesRepositories\ShiftRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Repository\EquipmentAndRoomsRepositories\ServiceTypeRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\EquipmentAndRoomsRepositories\ServiceRoomRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\EquipmentAndRoomsRepositories\MedicalEquipmentRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\EquipmentAndRoomsRepositories\HospitalizationRoomRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Repository\EquipmentAndRoomsRepositories\EquipmentReservationTimeRepository.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Dto\UserDTOs\UserDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\UserDTOs\ChangePasswordDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\UserDTOs\ChangeEmailDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\UserDTOs\UserInfoDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\UserDTOs\DoctorDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Dto\MedicalServiceDTOs\AppointmentOperationDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\MedicalServiceDTOs\HospitalizationDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Dto\BlogDTOs\ArticleDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Dto\MedicalInfoDTOs\MedicalRecordDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\MedicalInfoDTOs\PrescriptionDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\MedicalInfoDTOs\DrugDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Dto\MedicalInfoDTOs\ReportDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Dto\EquipmentAndRoomsDTOs\MedicalEquipmentDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                /><File
+                    RelPath = "Dto\DoctorDTOs\RateDTO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>

@@ -1,0 +1,23 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.ScheduleMedicalServices.ScheduleAppointment.ScheduleAppointmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica_Lekar.DoctorContentPages.ScheduleMedicalServices.ScheduleAppointment"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+
+    <Grid Margin="10, 20">
+        <Border BorderThickness="1" CornerRadius="10" BorderBrush="#444444" Background="White" Margin="0">
+            <StackPanel Orientation="Vertical" Margin="70,30">
+                <TextBlock Text="Zakaži pregled" FontSize="25" Margin="0,0,0,30" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                <Button x:Name="AppointmentWithMeButton" Background="White" Content="Kod mene" Margin="0,110,0,0" Height="50" FontSize="20" Click="AppointmentWithMeButton_Click"/>
+                <Button x:Name="AppointmentWithOtherDoctorButton" Background="White" Content="Kod drugog lekara" Margin="0,40,0,0" Height="50" FontSize="20" Click="AppointmentWithOtherDoctorButton_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

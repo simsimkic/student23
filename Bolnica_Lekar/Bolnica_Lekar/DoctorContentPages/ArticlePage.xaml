@@ -1,0 +1,45 @@
+﻿<Page x:Class="Bolnica_Lekar.DoctorContentPages.ArticlePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bolnica_Lekar.DoctorContentPages"
+      mc:Ignorable="d" 
+      Title="Medicinska klinika"
+      d:DesignHeight="650" d:DesignWidth="650"
+      Background="#1abc9c"
+      Loaded="Page_Loaded"
+      >
+
+    <Grid Margin="10, 20">
+        <Border BorderThickness="1" CornerRadius="10" BorderBrush="#444444" Background="White" Margin="0">
+            <StackPanel Orientation="Vertical" Margin="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="../images/doctor.png" Width="25" Margin="5"></Image>
+                    <TextBlock x:Name="DoctorNameTextBlock"  Grid.Column="1" Text="Marija Marijić" VerticalAlignment="Center" FontSize="15"/>
+                    <Image Grid.Column="2" Source="../images/calendar.png" Width="25" Margin="5"></Image>
+                    <TextBlock x:Name="DateTextBlock" Grid.Column="3" Text="15.04.2020." VerticalAlignment="Center" FontSize="15"/>
+                    <Image Grid.Column="4" Source="../images/bookmark.png" Width="25" Margin="5"></Image>
+                    <TextBlock x:Name="AppointmentTypeBlock" Grid.Column="5" Text="Prevencija" VerticalAlignment="Center" FontSize="15"/>
+                </Grid>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,10"/>
+                <TextBlock Text="Kako se pravilno zaštiti?" FontSize="19" Margin="0,0,0,10" HorizontalAlignment="Center" FontWeight="DemiBold"/>
+                <Image Grid.Column="0" Source="../images/article.jpg" Height="200"/>
+                <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta
+velit sapien, nec ullamcorper augue dapibus at. In eget tellus nec
+nunc fermentum tincidunt. Lorem ipsum dolor sit amet, consectetur
+adipiscing elit. Nunc porta velit sapien, nec ullamcorper augue
+dapibus at. In eget tellus nec nunc fermentum tincidunt. Lorem ipsum" FontSize="15" Margin="0,10,0,10" HorizontalAlignment="Stretch" FontWeight="ExtraLight" TextWrapping="Wrap" TextAlignment="Justify"/>
+                <Button x:Name="BackButton" Background="White" Content="Nazad" Margin="0,15,0,0" Height="33" FontSize="20" Click="BackButton_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
